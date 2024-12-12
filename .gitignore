@@ -164,3 +164,4 @@ cython_debug/
 scratch*
 token_file.py
 issues*.csv
+.vscode

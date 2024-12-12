@@ -1,61 +1,51 @@
 # Overview
 
-[Hack for LA Guides](https://github.com/hackforla/guides) members gather examples from [GitHub Wikis](https://github.com/hackforla/guides/wiki/Gathering-Examples-with-Github) as part of the initial guide-making process. 
-
-`hfla-search-wikis` is a Python script that searches for Wikis within GitHub repositories. It uses [`ripgrep-all`](https://github.com/phiresky/ripgrep-all), a command-line tool, to search for keywords within the Wikis' files.
+`search-wikis` is a Python script that searches through GitHub wikis. It uses [ripgrep-all](https://github.com/phiresky/ripgrep-all), a command-line tool, to search for keywords within the wiki files.
 
 The script does the following:
 
-1. Asks for keywords to search for
-2. Loops through a CSV file of repositories
-3. Clones each repository's Wiki
-4. Searches for the keywords within the Wiki
-5. Deletes the Wiki
-6. Outputs a results file
+1. Loops through a CSV file of repositories
+2. Clones each repository's wiki
+3. Searches for the keywords within each wiki
+4. Deletes the cloned wikis
+5. Outputs a results file
 
-# How to Use
+# Installation
 
-Follow the steps below to use `hfla-search-wikis`.
+Download or clone this repository into your local computer.
 
-## Prerequisites
-
-- [Python 3.x](https://www.python.org/downloads/)
-- [`ripgrep-all`](https://github.com/phiresky/ripgrep-all?tab=readme-ov-file#installation)
-- [`git`](https://git-scm.com/downloads)
-- bash terminal
-
-## Download
-
-To download a copy:
+To download:
 
 1. At the top of this repository, click the Code button
 2. Click Download ZIP
 3. Extract the zipped folder
 
-> Note: If you use the Download ZIP option, the folder will have the branch name added to the end.
-
-To clone this repository, run the bash command in your terminal:
+To clone this repository, run the following command in your terminal:
 
 ```bash
-git clone https://github.com/knqti/hfla-search-wikis.git
+git clone https://github.com/knqti/hfla-tools.git
 ```
 
 ## Change directory 
 
-Navigate into `hfla-search-wikis`' root directory:
+Navigate into `search-wikis`' root directory:
 
 ```bash
-cd /PATH/TO/hfla-search-wikis
+cd /PATH/TO/search-wikis
 ```
 
-## Run
+## Dependencies
 
-To run `hfla-search-wikis`:
+[Install ripgrep-all](https://github.com/phiresky/ripgrep-all?tab=readme-ov-file#installation).
+
+## Usage
+
+Run the script:
 
 ```bash
 python3 main.py
 ```
 
-You are prompted with `Keywords to search for:`. Type your keywords and press enter. 
+Enter your keywords when prompted.
 
-`hfla-search-wikis` searches through the repository links in *repo_urls.csv*. Update the links as needed.
+> Tip: `search-wikis` searches through the repository links in *repo_urls.csv*. Update the links as needed.
