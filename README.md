@@ -1,6 +1,6 @@
 # Overview
 
-The following tools help the HfLA Guides team expedite `Phase 1 - Gather Examples Solo`:
+The following tools help the HfLA Guides team expedite [Phase 1 - Gather Examples Solo](https://github.com/hackforla/guides/wiki/How-to-Gather-Examples:-Solo):
 
 - `search-issues`
 - `search-projects`
