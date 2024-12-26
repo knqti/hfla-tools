@@ -165,3 +165,4 @@ scratch*
 token_file.py
 issues*.csv
 .vscode
+*.wiki/
