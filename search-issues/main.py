@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 from dotenv import load_dotenv
 from ghapi.all import GhApi
+from pathlib import Path
 
 def get_credentials():
     load_dotenv()
@@ -67,8 +68,8 @@ if __name__ == '__main__':
     else:
         api = GhApi()
     
-    repo_urls = './repo_urls.csv'
-    repo_list = get_repos(repo_urls)
+    url_path = Path(__file__).parent / 'repo_urls.csv'
+    repo_list = get_repos(url_path)
 
     keywords = input('Keywords to search for: ').lower().strip()
     keywords_quoted = f'"{keywords}"'
