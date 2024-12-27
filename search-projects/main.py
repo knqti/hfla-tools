@@ -39,6 +39,7 @@ def get_project_items(owner:str, numbers_titles:list, keywords:str):
             print('== Exception Error ==')
             print(f'{e}\n')
             print(f'Project number: {number}')
+            print(f'Project title: {title}')
 
     return contents
 
