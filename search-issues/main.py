@@ -54,7 +54,7 @@ def parse_issues(api_response:dict, repo:str, keywords:str):
     return issues_count, parsed_data
 
 def export_to_csv(file_name:str, list_name:str):
-    with open(file_name, 'w', encoding='utf-8',newline='') as file:
+    with open(file_name, 'w', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
         writer.writerows(list_name)
 
