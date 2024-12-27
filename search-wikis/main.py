@@ -2,6 +2,7 @@ import csv
 import os
 import subprocess as sp
 from datetime import datetime
+from pathlib import Path
 
 def get_repos(csv_file:str):
     list_of_repos = []
@@ -46,12 +47,12 @@ def export_to_csv(file_name:str, list_name:str):
 
 if __name__ == '__main__':
     now = datetime.now().strftime('%Y-%m-%dT%H-%M-%S')
-    url_file = './repo_urls.csv'
+    url_path = Path(__file__).parent / 'repo_urls.csv'
 
     keywords = input('Keywords to search for: ').lower().strip()
     keywords_hyphened = keywords.replace(' ', '-')
     
-    repo_list = get_repos(url_file)
+    repo_list = get_repos(url_path)
     wiki_list = get_wikis(repo_list)
     
     results_list = [('Wiki URL', 'Keywords', 'rga Results')]
@@ -62,7 +63,7 @@ if __name__ == '__main__':
         
         print(f'Searching {wiki_git_url}...')
         results = rga_search(keywords, temp_folder)        
-        print(results.stdout)
+        # print(results.stdout)
 
         wiki_url = wiki_git_url.replace('.wiki.git', '/wiki')
         data_list = [(wiki_url, keywords, results)]    
@@ -77,4 +78,4 @@ if __name__ == '__main__':
     
     output_file = f'{now}_wikis_found_{keywords_hyphened}.csv'
     export_to_csv(output_file, results_list)
-    print(f'Done! See output file {output_file}')
+    print(f'Done! Output file ready: {output_file}')
