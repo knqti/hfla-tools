@@ -61,14 +61,15 @@ def export_to_csv(file_name:str, list_name:str):
 
 if __name__ == '__main__':
     now = datetime.now().strftime('%Y-%m-%dT%H-%M-%S')
+    this_directory = Path(__file__).parent
     
-    if os.path.exists('.env'):
+    if os.path.exists(this_directory.joinpath('.env')):
         token = get_credentials()
         api = GhApi(token)
     else:
         api = GhApi()
     
-    url_path = Path(__file__).parent / 'repo_urls.csv'
+    url_path = this_directory.joinpath('repo_urls.csv')
     repo_list = get_repos(url_path)
 
     keywords = input('Keywords to search for: ').lower().strip()
